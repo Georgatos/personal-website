@@ -1,0 +1,110 @@
+.container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 0 24px;
+}
+
+.heading {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    color: #f8fafc;
+    text-shadow: 0 8px 16px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6);
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.cursor {
+    opacity: 1;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+}
+
+.cursor.hidden {
+    opacity: 0;
+}
+
+.button {
+    margin-top: 2rem;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: #f1f5f9;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins', Arial, sans-serif;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 6px 12px rgba(99,102,241,0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+.button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 8px 15px rgba(99,102,241,0.5);
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content {
+        padding: 0 16px;
+    }
+
+    .button {
+        padding: 14px 32px;
+        font-size: 16px;
+    }
+}

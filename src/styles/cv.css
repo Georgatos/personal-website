@@ -1,0 +1,403 @@
+/* CV Section Styles */
+.cv-section {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f8fafc 0%, #f3f4f6 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cv-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.cv-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.cv-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+}
+
+.title-gradient {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.title-underline {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    border-radius: 2px;
+}
+
+.cv-subtitle {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Timeline */
+.timeline-container {
+    position: relative;
+    padding: 2rem 0;
+    margin: 4rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #6366f1, #a855f7);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+    padding-right: 3rem;
+}
+
+.timeline-item.right {
+    left: 50%;
+    padding-left: 3rem;
+}
+
+.timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Timeline Badges */
+.timeline-badge {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #6366f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+.timeline-item.left .timeline-badge {
+    right: -25px;
+    top: 2rem;
+}
+
+.timeline-item.right .timeline-badge {
+    left: -25px;
+    top: 2rem;
+}
+
+.timeline-badge.current {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    border-color: #6366f1;
+}
+
+.timeline-badge.military {
+    border-color: #10b981;
+}
+
+.timeline-badge.education {
+    border-color: #f59e0b;
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+}
+
+.timeline-badge.current .badge-icon {
+    filter: grayscale(0%) brightness(2);
+}
+
+/* Timeline Content */
+.timeline-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: #6366f1;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.25rem 1rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 20px;
+}
+
+.timeline-description {
+    color: #4b5563;
+    line-height: 1.8;
+}
+
+.timeline-description strong {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.timeline-achievements {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    list-style: none;
+}
+
+.timeline-achievements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #6b7280;
+}
+
+.timeline-achievements li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: bold;
+}
+
+/* Skills Summary */
+.skills-summary {
+    margin: 4rem 0;
+    padding: 3rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.skills-summary-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.skills-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.skill-category {
+    text-align: center;
+}
+
+.category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #6366f1;
+    margin-bottom: 1rem;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.skill-item {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: #4b5563;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* Download Section */
+.cv-download {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.download-btn {
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+}
+
+.download-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.download-note {
+    margin-top: 1rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Responsive Design - UPDATED WITH MOBILE SVG FIXES */
+@media (max-width: 968px) {
+    .timeline-line {
+        left: 40px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 110px;
+        padding-right: 2rem;
+        text-align: left;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-item.left .timeline-badge,
+    .timeline-item.right .timeline-badge {
+        left: 15px;
+        right: auto;
+    }
+
+    .skills-categories {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .cv-section {
+        padding: 60px 0;
+    }
+
+    .cv-container {
+        padding: 0 1rem;
+    }
+
+    .cv-title {
+        font-size: 2rem;
+    }
+
+    .cv-subtitle {
+        font-size: 1rem;
+    }
+
+    .timeline-item {
+        padding-left: 50px; /* REDUCED since no more badges */
+    }
+
+    .timeline-content {
+        padding: 1.5rem;
+    }
+
+    .timeline-title {
+        font-size: 1.25rem;
+    }
+
+    /* COMPLETELY HIDE TIMELINE BADGES ON MOBILE */
+    .timeline-badge {
+        display: none;
+    }
+
+    .skills-summary {
+        padding: 2rem 1.5rem;
+    }
+
+    .download-btn {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* ADDITIONAL FIX for very small screens */
+@media (max-width: 480px) {
+    .timeline-item {
+        padding-left: 40px; /* FURTHER REDUCED */
+    }
+
+    /* Timeline badges already hidden by parent media query */
+}
